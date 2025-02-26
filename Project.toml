@@ -1,0 +1,23 @@
+name = "Algorithms"
+uuid = "98ba5b03-f88f-4e42-8691-41be7fe3b492"
+authors = ["YabusameHoulen <yabusamehour@gmail.com> and contributors"]
+version = "1.0.0-DEV"
+
+[deps]
+CairoMakie = "13f3f980-e62b-5c42-98c6-ff1f3baf88f0"
+CanonicalTraits = "a603d957-0e48-4f86-8fbd-0b7bc66df689"
+GLMakie = "e9467ef8-e4e7-5192-8a1a-b1aee30e663a"
+SimpleTraits = "699a6c99-e7fa-54fc-8d76-47d257e15c1d"
+TestItems = "1c621080-faea-4a02-84b6-bbd5e436b8fe"
+
+[compat]
+CairoMakie = "0.13.1"
+CanonicalTraits = "0.2.4"
+GLMakie = "0.11.2"
+SimpleTraits = "0.9.4"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
