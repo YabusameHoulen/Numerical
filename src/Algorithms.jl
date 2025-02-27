@@ -3,11 +3,11 @@ module Algorithms
 using TestItems
 
 ### leet code
-include("computer/sorting.jl")
+include("Computer/sorting.jl")
 
 ### features
-include("features/value_can_partially_change.jl")
-include("features/test_module.jl")
+include("Feature_test/value_can_partially_change.jl")
+include("Feature_test/test_module.jl")
 using .MyPackage
 
 ### numerical

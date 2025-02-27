@@ -50,6 +50,7 @@ after_crossriver(x::Fish) = x.alive
 istrait(CanFly{Bird})
 @check_fast_traitdispatch CanFly
 @check_fast_traitdispatch CanFly Person
+
 ## Canonical Trait
 using CanonicalTraits
 @trait CanFly{T} begin
