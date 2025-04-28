@@ -4,16 +4,20 @@ authors = ["YabusameHoulen <yabusamehour@gmail.com> and contributors"]
 version = "1.0.0-DEV"
 
 [deps]
-CairoMakie = "13f3f980-e62b-5c42-98c6-ff1f3baf88f0"
 CanonicalTraits = "a603d957-0e48-4f86-8fbd-0b7bc66df689"
 GLMakie = "e9467ef8-e4e7-5192-8a1a-b1aee30e663a"
+GeometryTypes = "4d00f742-c7ba-57c2-abde-4428a4b178cb"
+Optim = "429524aa-4258-5aef-a3af-852621145aeb"
+Overseer = "1ada24be-c16d-4464-9f61-27c2e0f16645"
 SimpleTraits = "699a6c99-e7fa-54fc-8d76-47d257e15c1d"
 TestItems = "1c621080-faea-4a02-84b6-bbd5e436b8fe"
 
 [compat]
-CairoMakie = "0.13.1"
 CanonicalTraits = "0.2.4"
 GLMakie = "0.11.2"
+GeometryTypes = "0.8.5"
+Optim = "1.11.0"
+Overseer = "0.3.2"
 SimpleTraits = "0.9.4"
 
 [extras]
