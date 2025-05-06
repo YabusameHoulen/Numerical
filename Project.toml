@@ -4,6 +4,7 @@ authors = ["YabusameHoulen <yabusamehour@gmail.com> and contributors"]
 version = "1.0.0-DEV"
 
 [deps]
+CUDA = "052768ef-5323-5732-b1bb-66c8b64840ba"
 CanonicalTraits = "a603d957-0e48-4f86-8fbd-0b7bc66df689"
 GLMakie = "e9467ef8-e4e7-5192-8a1a-b1aee30e663a"
 GeometryTypes = "4d00f742-c7ba-57c2-abde-4428a4b178cb"
@@ -13,6 +14,7 @@ SimpleTraits = "699a6c99-e7fa-54fc-8d76-47d257e15c1d"
 TestItems = "1c621080-faea-4a02-84b6-bbd5e436b8fe"
 
 [compat]
+CUDA = "5.7.3"
 CanonicalTraits = "0.2.4"
 GLMakie = "0.11.2"
 GeometryTypes = "0.8.5"

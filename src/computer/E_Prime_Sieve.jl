@@ -41,14 +41,14 @@ prime_sieve_Eratosthenes(1000) .|> primeQ |> all
 @time prime_sieve_Euler(1000000000)
 @time prime_sieve_Eratosthenes(100000000)
 
-using Test
+# using Test
 
-@testset "Trigonometric identities" begin
-    x = 2 / 3 * π
-    @test sin(-x) ≈ -sin(x)
-    @test cos(-x) ≈ -cos(x)
-    @test sin(2x) ≈ 2 * sin(x) * cos(x)
-    @test cos(2x) ≈ cos(x)^2 - sin(x)^2
-end;
+# @testset "Trigonometric identities" begin
+#     x = 2 / 3 * π
+#     @test sin(-x) ≈ -sin(x)
+#     @test cos(-x) ≈ -cos(x)
+#     @test sin(2x) ≈ 2 * sin(x) * cos(x)
+#     @test cos(2x) ≈ cos(x)^2 - sin(x)^2
+# end;
 
-@test prime_sieve_Eratosthenes(100) == prime_sieve_Euler(100)
+# @test prime_sieve_Eratosthenes(100) == prime_sieve_Euler(100)

@@ -28,10 +28,10 @@ end
 
 # Insertion Sort
 function insertion_sort(arr)
-    for i in 2:length(arr)
+    for i in Iterators.drop(eachindex(arr), 1)
         key = arr[i]
         j = i - 1
-        while j >= 1 && arr[j] > key
+        while j > 0 && arr[j] > key
             arr[j+1] = arr[j]
             j -= 1
         end
@@ -39,6 +39,33 @@ function insertion_sort(arr)
     end
     return arr
 end
+
+# Insertion Sort
+function insertion_sort_2(arr)
+    for i in 2:length(arr)
+        key = arr[i]
+        j = i - 1
+        while j > 0 && arr[j] > key
+            arr[j+1] = arr[j]
+            j -= 1
+        end
+        arr[j+1] = key
+    end
+    return arr
+end
+
+
+
+# using Test
+# @test insertion_sort([3, 1, 4, 1, 5, 9, 2, 6]) == [1, 1, 2, 3, 4, 5, 6, 9]
+
+# @benchmark insertion_sort($[11000:-1:1;])
+# @benchmark insertion_sort_2($[11000:-1:1;])
+
+
+@time Iterators.drop(eachindex([3, 1, 4, 1, 5, 9, 2, 6]), 1)
+Iterators.take(eachindex([3, 1, 4, 1, 5, 9, 2, 6]), 1) |> collect
+Iterators.rest([3, 1, 4, 1, 5, 9, 2, 6], 5)
 
 
 # Merge Sort
