@@ -13,10 +13,12 @@ end
 function prime_sieve_Euler(n::Integer)
     numbers = trues(n)
     primes = Int[]
-    @inbounds for i in 2:n
+    for i in 2:n
         numbers[i] == true && (push!(primes, i))
         for j in primes
-            numbers[i*j] = false
+            if i * j <= n
+                numbers[i*j] = false
+            end
             i % j == 0 && break
         end
     end
@@ -31,24 +33,9 @@ function primeQ(n::Int)
     end
     return true
 end
-prime_sieve_Eratosthenes(1000)
-prime_sieve_Eratosthenes(1000) .|> primeQ |> all
 
-
-@code_warntype prime_sieve_Euler(1000)
-@code_warntype prime_sieve_Eratosthenes(100000)
-
-@time prime_sieve_Euler(1000000000)
-@time prime_sieve_Eratosthenes(100000000)
-
-# using Test
-
-# @testset "Trigonometric identities" begin
-#     x = 2 / 3 * π
-#     @test sin(-x) ≈ -sin(x)
-#     @test cos(-x) ≈ -cos(x)
-#     @test sin(2x) ≈ 2 * sin(x) * cos(x)
-#     @test cos(2x) ≈ cos(x)^2 - sin(x)^2
-# end;
-
-# @test prime_sieve_Eratosthenes(100) == prime_sieve_Euler(100)
+@testitem "Prime" begin
+    using Algorithms: prime_sieve_Eratosthenes, prime_sieve_Euler, primeQ
+    @test prime_sieve_Eratosthenes(10000) == prime_sieve_Euler(10000)
+    @test prime_sieve_Eratosthenes(1000) .|> primeQ |> all
+end

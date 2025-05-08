@@ -101,24 +101,10 @@ function quick_sort(arr)
     end
 end
 
-## Testing
-@testitem "Sorting" begin
-    @test Algorithms.selection_sort([3, 1, 4, 1, 5, 9, 2, 6]) == [1, 1, 2, 3, 4, 5, 6, 9]
-    @test Algorithms.bubble_sort([3, 1, 4, 1, 5, 9, 2, 6]) == [1, 1, 2, 3, 4, 5, 6, 9]
-    @test Algorithms.insertion_sort([3, 1, 4, 1, 5, 9, 2, 6]) == [1, 1, 2, 3, 4, 5, 6, 9]
-    @test Algorithms.merge_sort([3, 1, 4, 1, 5, 9, 2, 6]) == [1, 1, 2, 3, 4, 5, 6, 9]
-    @test Algorithms.quick_sort([3, 1, 4, 1, 5, 9, 2, 6]) == [1, 1, 2, 3, 4, 5, 6, 9]
-end
 
 
 # using JET
 ## benchmark
-Mytest(f, cond::Symbol) =
-    if isdefined(@__MODULE__, cond)
-        f()
-    end
-
-
 Mytest(:BenchmarkTools) do
     eval(quote
         @btime selection_sort([3, 1, 4, 1, 5, 9, 2, 6])
@@ -126,6 +112,15 @@ Mytest(:BenchmarkTools) do
         @btime insertion_sort([3, 1, 4, 1, 5, 9, 2, 6])
         @btime merge_sort([3, 1, 4, 1, 5, 9, 2, 6])
         @btime quick_sort([3, 1, 4, 1, 5, 9, 2, 6])
-        @info " @btime to test performance"
+        @info " @btime to test sort Algorithms' performance "
     end)
+end
+
+## Testing
+@testitem "Sorting" begin
+    @test Algorithms.selection_sort([3, 1, 4, 1, 5, 9, 2, 6]) == [1, 1, 2, 3, 4, 5, 6, 9]
+    @test Algorithms.bubble_sort([3, 1, 4, 1, 5, 9, 2, 6]) == [1, 1, 2, 3, 4, 5, 6, 9]
+    @test Algorithms.insertion_sort([3, 1, 4, 1, 5, 9, 2, 6]) == [1, 1, 2, 3, 4, 5, 6, 9]
+    @test Algorithms.merge_sort([3, 1, 4, 1, 5, 9, 2, 6]) == [1, 1, 2, 3, 4, 5, 6, 9]
+    @test Algorithms.quick_sort([3, 1, 4, 1, 5, 9, 2, 6]) == [1, 1, 2, 3, 4, 5, 6, 9]
 end
