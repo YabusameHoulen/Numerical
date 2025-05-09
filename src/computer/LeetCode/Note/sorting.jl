@@ -54,18 +54,9 @@ function insertion_sort_2(arr)
     return arr
 end
 
-
-
-# using Test
-# @test insertion_sort([3, 1, 4, 1, 5, 9, 2, 6]) == [1, 1, 2, 3, 4, 5, 6, 9]
-
-# @benchmark insertion_sort($[11000:-1:1;])
-# @benchmark insertion_sort_2($[11000:-1:1;])
-
-
-@time Iterators.drop(eachindex([3, 1, 4, 1, 5, 9, 2, 6]), 1)
-Iterators.take(eachindex([3, 1, 4, 1, 5, 9, 2, 6]), 1) |> collect
-Iterators.rest([3, 1, 4, 1, 5, 9, 2, 6], 5)
+# @time Iterators.drop(eachindex([3, 1, 4, 1, 5, 9, 2, 6]), 1)
+# Iterators.take(eachindex([3, 1, 4, 1, 5, 9, 2, 6]), 1) |> collect
+# Iterators.rest([3, 1, 4, 1, 5, 9, 2, 6], 5)
 
 
 # Merge Sort
@@ -121,6 +112,7 @@ end
     @test Algorithms.selection_sort([3, 1, 4, 1, 5, 9, 2, 6]) == [1, 1, 2, 3, 4, 5, 6, 9]
     @test Algorithms.bubble_sort([3, 1, 4, 1, 5, 9, 2, 6]) == [1, 1, 2, 3, 4, 5, 6, 9]
     @test Algorithms.insertion_sort([3, 1, 4, 1, 5, 9, 2, 6]) == [1, 1, 2, 3, 4, 5, 6, 9]
+    @test Algorithms.insertion_sort_2([3, 1, 4, 1, 5, 9, 2, 6]) == [1, 1, 2, 3, 4, 5, 6, 9]
     @test Algorithms.merge_sort([3, 1, 4, 1, 5, 9, 2, 6]) == [1, 1, 2, 3, 4, 5, 6, 9]
     @test Algorithms.quick_sort([3, 1, 4, 1, 5, 9, 2, 6]) == [1, 1, 2, 3, 4, 5, 6, 9]
 end

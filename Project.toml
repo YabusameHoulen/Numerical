@@ -21,10 +21,4 @@ GeometryTypes = "0.8.5"
 Optim = "1.11.0"
 Overseer = "0.3.2"
 SimpleTraits = "0.9.4"
-TestItems = "1.0.0"
 
-[extras]
-Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
-
-[targets]
-test = ["Test"]

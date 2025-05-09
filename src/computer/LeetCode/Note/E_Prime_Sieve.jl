@@ -35,7 +35,9 @@ function primeQ(n::Int)
 end
 
 @testitem "Prime" begin
+    # using BenchmarkTools
     using Algorithms: prime_sieve_Eratosthenes, prime_sieve_Euler, primeQ
     @test prime_sieve_Eratosthenes(10000) == prime_sieve_Euler(10000)
     @test prime_sieve_Eratosthenes(1000) .|> primeQ |> all
+    # @btime prime_sieve_Eratosthenes(1000)
 end

@@ -37,7 +37,37 @@ function div_core(divident::Integer, divisor::Integer)
 end
 
 
+function integer_array_original(arr::Vector{T}) where {T<:Integer}
+    N = length(bitstring(arr[begin]))
+    @assert N in [8, 16, 32, 64, 128]
+    result = 0
+    for num in arr
+        result ⊻= num
+    end
+    return result
+end
+
+
+function integer_array(arr::Vector{T}) where {T<:Integer}
+    N = length(bitstring(arr[begin]))
+    @assert N in [8, 16, 32, 64, 128]
+    num_bits = zeros(Int, N)
+    for num in arr
+        for i in 1:N
+            num_bits[i] += (num >> (N - i)) & 1
+        end
+    end
+    result = 0
+    for i in 1:N
+        result = (result << 1) + num_bits[i] % 3
+    end
+    return result
+end
+
+
 @testitem "Integer" begin
-    using Algorithms: my_div
+    using Algorithms: my_div, integer_array_original, integer_array
     @test my_div(-15, 2) == -7
+    @test integer_array_original([2, 2, 3, 3, 5, 4, 4, 5, 6]) == 6
+    @test integer_array([1, 1, 1, 4, 2, 2, 2, 4, 4, 5]) == 5
 end
