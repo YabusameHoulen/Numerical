@@ -64,7 +64,7 @@ function merge_sort(arr)
     if length(arr) <= 1
         return arr
     else
-        mid_idx = div(length(arr), 2)
+        mid_idx = length(arr) >> 1
         left_arr = merge_sort(arr[1:mid_idx])
         right_arr = merge_sort(arr[(mid_idx+1):end])
         merged_arr = []
@@ -93,8 +93,6 @@ function quick_sort(arr)
 end
 
 
-
-# using JET
 ## benchmark
 Mytest(:BenchmarkTools) do
     eval(quote
